@@ -14,13 +14,12 @@ export const StateContextProvider = ({ children }) => {
     const res = await fetch(`${baseUrl}${url}`, {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '1873f25a38msh9cc95f6b7849606p1b0f6ejsnc02cc8534669',
+        'X-RapidAPI-Key': process.env.RAPID_API_KEY,
         'X-RapidAPI-Host': 'front-page-search-engine.p.rapidapi.com'
       }
     });
 
     const data = await res.json();
-    console.log(data)
     setResults(data);
     setLoading(false);
   };

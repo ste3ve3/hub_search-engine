@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from "react";
 import { useDebounce } from 'use-debounce';
-import hubLogo from '../assets/images/logo.png'
 import SearchIcon  from '../assets/images/search.png';
 import { useStateContext } from '../contexts/StateContextProvider';
 
@@ -15,28 +14,17 @@ export const Home = () => {
 
   return (
     <>
-    <div className="flex justify-between mb-24 p-5 mx-3">
-      <img
-        className="h-20 w-20"
-        src={hubLogo}
-        alt="Google Logo"
-      />
-      <span className="bg-purple flex items-center justify-center h-12 w-12 mt-1.5 pt-1 leading-12 hover:bg-white-secondary hover:cursor-pointer text-white text-xl rounded-full" >
-        🌞
-        </span>
-        {/* 🌙 */}
-    </div>
 
-    <div className="flex flex-col justify-center items-center mb-48">
+    <div className="flex flex-col justify-center items-center mb-48 mt-24">
         <div className='flex flex-col justify-center items-center'>     
           <span className='text-7xl px-4 font-extrabold'>Hub</span> 
-          <span className='text-lg mb-5 font-light'>The ultimate search engine for all your needs</span>
+          <span className='text-lg mb-5 font-light dark:font-normal phone:w-11/12 phone:text-center' >The ultimate search engine for all your needs</span>
         </div>
         
-      <div className="relative w-1/2 ">
+      <div className="relative w-1/2 big-tablet:w-9/12 phone:w-11/12">
         <div className="flex rounded-full items-center border border-gray-500 py-2">
             <input
-              className=" bg-transparent ml-10 w-full text-gray-200 font-normal mr-3 py-1 px-2 leading-tight focus:outline-none"
+              className=" bg-transparent ml-10 w-full text-gray-200 dark:text-gray-700 font-normal mr-3 py-1 px-2 leading-tight focus:outline-none"
               type="text"
               value={text}
               placeholder="Search anything"

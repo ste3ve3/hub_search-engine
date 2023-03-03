@@ -12,11 +12,13 @@ export const App = () => {
   const location = useLocation();
   return (
     <div className={whiteTheme ? 'dark': ''}>
-      <div className="bg-black  text-white-secondary min-h-screen dark:bg-white-pure dark:text-black">
-      {location.pathname !== '/' && <Navbar whiteTheme={whiteTheme} setWhiteTheme={setWhiteTheme} />}
+      <div className="bg-black  text-white-secondary min-h-screen dark:bg-white-pure dark:text-black phone:-mt-3">
+      {/* {location.pathname !== '/' && <Navbar whiteTheme={whiteTheme} setWhiteTheme={setWhiteTheme} />} */}
+      <Navbar whiteTheme={whiteTheme} setWhiteTheme={setWhiteTheme} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/error" element={<NotFound />} />
           <Route path="*" element={<NotFound />}/>
         </Routes>
         <Footer />
