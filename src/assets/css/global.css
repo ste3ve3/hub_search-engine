@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('./font.css');
+
+@layer base {
+    *{
+        @apply box-border;
+    }
+    body{
+        @apply font-sans m-0 p-0 text-base;
+    }
+
+  }

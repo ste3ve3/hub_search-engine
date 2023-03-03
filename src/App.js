@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React , { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Search } from "./pages/Search";
+import { Navbar } from "./components/Navbar"
+import { NotFound } from "./pages/NotFound";
+import { Footer } from './components/Footer'
+import { useLocation } from 'react-router-dom';
 
-function App() {
+export const App = () => {
+  const [whiteTheme, setWhiteTheme] = useState(false)
+  const location = useLocation();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={whiteTheme ? 'dark': ''}>
+      <div className="bg-black  text-white-secondary min-h-screen dark:bg-white-pure dark:text-black">
+      {location.pathname !== '/' && <Navbar whiteTheme={whiteTheme} setWhiteTheme={setWhiteTheme} />}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="*" element={<NotFound />}/>
+        </Routes>
+        <Footer />
+      </div>
     </div>
+    
+    
   );
-}
-
-export default App;
+};
