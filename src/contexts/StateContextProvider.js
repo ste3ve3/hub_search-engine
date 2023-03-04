@@ -14,7 +14,7 @@ export const StateContextProvider = ({ children }) => {
     const res = await fetch(`${baseUrl}${url}`, {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': process.env.RAPID_API_KEY,
+        'X-RapidAPI-Key': '6a2920e800mshe90d0a022f3aebbp1e4921jsn11eb95357e62',
         'X-RapidAPI-Host': 'front-page-search-engine.p.rapidapi.com'
       }
     });
