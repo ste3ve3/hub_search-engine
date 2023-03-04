@@ -33,10 +33,9 @@ searchParams.delete('query');
     <>
     <div className="flex justify-between items-center p-5 mx-3 phone:mt-3">
       <img
-        className={location.pathname !== '/' ? "h-20 w-20 hover:cursor-pointer phone:hidden" : "h-20 w-20 hover:cursor-pointer"}
+        className={location.pathname !== '/' ? "h-20 w-20 phone:hidden" : "h-20 w-20"}
         src={hubLogo}
-        alt="Hub Logo"
-        onClick={window.location.href = "/"}
+        alt="Google Logo"
       />
       {
       location.pathname !== '/' && 
